@@ -30,7 +30,7 @@ export default function Navbar() {
           </div>
 
           <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold">TenTwenty</span>
+            <span className="text-lg border border-black px-4 py-2">Contact us</span>
           </Link>
 
           <button
