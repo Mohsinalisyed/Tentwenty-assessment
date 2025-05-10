@@ -5,12 +5,12 @@ import Navbar from "@/components/Navbar";
 
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "TenTwenty",
-  description: "Welcome to TenTwenty Farms",
+  title: "TenTwenty Assignment",
+  description: "A modern web application built with Next.js",
 };
 
 export default function RootLayout({
@@ -20,11 +20,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} font-sans`}>
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className={inter.className}>
         <Navbar />
-        <main>
-          {children}
-        </main>
+        <main>{children}</main>
       </body>
     </html>
   );
