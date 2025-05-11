@@ -23,16 +23,16 @@ export const BannerNavigation = ({
     <div className="relative">
       <div className="p-4 relative">
         <div 
-          className="absolute inset-0 rounded-lg"
+          className="absolute inset-0"
           style={{
             background: `conic-gradient(
               from -43deg,
               white ${progress * 3.6}deg,
               rgba(255, 255, 255, 0.5) ${progress * 3.6}deg
             )`,
-            mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+            mask: 'linear-gradient(#eee 0 0) content-box, linear-gradient(#eee 0 0)',
             maskComposite: 'exclude',
-            padding: '3px',
+            padding: '1px',
           }}
         />
         <button
