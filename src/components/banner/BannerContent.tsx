@@ -16,7 +16,7 @@ export const BannerContent = ({ slide }: BannerContentProps) => (
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.5, delay: 0.4 }}
       >
-        <p className="text-[16px] md:text-2xl mb-6 font-thin">
+        <p className="text-[14px] sm:text-[16px] md:text-2xl mb-6 font-thin">
           {slide.description}
         </p>
       </motion.div>
@@ -29,7 +29,7 @@ export const BannerContent = ({ slide }: BannerContentProps) => (
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <h1 className="text-[64px] md:text-6xl mb-4">{slide.title}</h1>
+        <h1 className="text-[32px] sm:text-[64px] md:text-6xl mb-4">{slide.title}</h1>
       </motion.div>
     </AnimatePresence>
   </div>

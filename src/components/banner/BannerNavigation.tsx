@@ -19,7 +19,7 @@ export const BannerNavigation = ({
   onMouseEnter,
   onMouseLeave,
 }: BannerNavigationProps) => (
-  <div className="absolute left-[135px] bottom-[5%] -translate-y-1/2 flex flex-col gap-4 z-10">
+  <div className="absolute left-[24px] md:left-[135px] bottom-[5%] -translate-y-1/2 flex flex-col gap-4 z-10">
     <div className="relative">
       <div className="p-4 relative">
         <div 

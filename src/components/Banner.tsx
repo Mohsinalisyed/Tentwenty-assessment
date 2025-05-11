@@ -59,7 +59,7 @@ export default function Banner() {
 
       <div className="absolute inset-0">
         <div className="max-w-[1440px] mx-auto h-full relative">
-          <div className="absolute h-full flex items-center pl-[135px]">
+          <div className="absolute h-full flex items-center pl-[24px] md:pl-[135px]">
             <BannerContent slide={slides[currentSlide]} index={currentSlide} />
           </div>
 
