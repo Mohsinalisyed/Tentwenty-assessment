@@ -92,24 +92,9 @@ export default function ProductSlider() {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </p>
       <div
-        className="relative h-[600px] w-full max-w-[1440px] mx-auto overflow-hidden"
+        className="relative h-[620px] w-full max-w-[1440px] mx-auto overflow-hidden"
+        style={{ width: `${CONTAINER_WIDTH}px` }}
       >
-        {/* Left Arrow */}
-        <button
-          onClick={goToPrev}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-30 bg-white/80 hover:bg-white rounded-full shadow p-2"
-          aria-label="Previous"
-        >
-          <span className="text-2xl">&#8592;</span>
-        </button>
-        {/* Right Arrow */}
-        <button
-          onClick={goToNext}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-30 bg-white/80 hover:bg-white rounded-full shadow p-2"
-          aria-label="Next"
-        >
-          <span className="text-2xl">&#8594;</span>
-        </button>
         {/* Always render three cards in the same order/positions */}
         {visibleSlides.map((slide, idx) => {
           const pos = positions[idx];
@@ -127,7 +112,7 @@ export default function ProductSlider() {
                 zIndex: pos.zIndex,
                 transition: { type: "spring", stiffness: 300, damping: 30 },
               }}
-              className="absolute h-[400px] w-[320px]"
+              className="absolute h-[70vh] w-[50vh]"
               style={{ pointerEvents: idx === 1 ? "auto" : "none" }}
               onHoverStart={() => idx === 1 && setIsHovering(true)}
               onHoverEnd={() => idx === 1 && setIsHovering(false)}
@@ -141,18 +126,18 @@ export default function ProductSlider() {
                 }
               }}
             >
-              <div className="relative h-full w-full overflow-hidden flex">
+              <div className="relative h-full w-full overflow-hidden ">
                 <Image
                   src={slide.src}
                   alt={slide.alt}
                   fill
-                  className="object-cover"
+                  className="object-cover "
                   priority={idx === 1}
                 />
                 {/* Drag Overlay */}
                 {idx === 1 && isHovering && (
-                  <div className="absolute inset-0 flex items-center left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 justify-center w-[99px] h-[99px]  rounded-full text-black bg-white font-medium text-xl pointer-events-none">
-                    Drag
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/30 text-white font-medium text-xl  pointer-events-none">
+                    drag
                   </div>
                 )}
               </div>
