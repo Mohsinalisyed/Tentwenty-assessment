@@ -36,7 +36,7 @@ const slides = [
   },
 ];
 
-const CARD_WIDTH = 435; // px, adjust for your design
+const CARD_WIDTH = 320; // px, adjust for your design
 const CONTAINER_WIDTH = 1440; // px, adjust for your design
 const HIDE_PART = CARD_WIDTH * 0.2; // Hide 2/3 of the side cards
 
@@ -92,8 +92,7 @@ export default function ProductSlider() {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </p>
       <div
-        className="relative h-[620px] w-full max-w-[1440px] mx-auto overflow-hidden"
-        style={{ width: `${CONTAINER_WIDTH}px` }}
+        className="relative h-[600px] w-full max-w-[1440px] mx-auto overflow-hidden"
       >
         {/* Left Arrow */}
         <button
@@ -128,7 +127,7 @@ export default function ProductSlider() {
                 zIndex: pos.zIndex,
                 transition: { type: "spring", stiffness: 300, damping: 30 },
               }}
-              className="absolute h-[70vh] w-[50vh]"
+              className="absolute h-[400px] w-[320px]"
               style={{ pointerEvents: idx === 1 ? "auto" : "none" }}
               onHoverStart={() => idx === 1 && setIsHovering(true)}
               onHoverEnd={() => idx === 1 && setIsHovering(false)}
@@ -142,18 +141,18 @@ export default function ProductSlider() {
                 }
               }}
             >
-              <div className="relative h-full w-full overflow-hidden ">
+              <div className="relative h-full w-full overflow-hidden flex">
                 <Image
                   src={slide.src}
                   alt={slide.alt}
                   fill
-                  className="object-cover "
+                  className="object-cover"
                   priority={idx === 1}
                 />
                 {/* Drag Overlay */}
                 {idx === 1 && isHovering && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/30 text-white font-medium text-xl  pointer-events-none">
-                    drag
+                  <div className="absolute inset-0 flex items-center left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 justify-center w-[99px] h-[99px]  rounded-full text-black bg-white font-medium text-xl pointer-events-none">
+                    Drag
                   </div>
                 )}
               </div>
@@ -161,7 +160,7 @@ export default function ProductSlider() {
           );
         })}
       </div>
-      <div className="mt-2">
+      <div className="mt-10">
         <h4 className="text-lg font-semibold">{slides[activeIndex].client}</h4>
         <p className="text-gray-500">{slides[activeIndex].location}</p>
       </div>
