@@ -60,7 +60,6 @@ const positions = [
 
 export default function ProductSlider() {
   const [page, setPage] = useState(0);
-  const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -89,7 +88,10 @@ export default function ProductSlider() {
     <section className="flex flex-col items-center py-12 bg-white">
       <h2 className="text-3xl font-semibold mb-2">Quality Products</h2>
       <p className="max-w-xl text-center text-gray-500 mb-8">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
       </p>
       <div
         className="relative h-[620px] w-full max-w-[1440px] mx-auto overflow-hidden"
@@ -114,8 +116,6 @@ export default function ProductSlider() {
               }}
               className="absolute h-[70vh] w-[50vh]"
               style={{ pointerEvents: idx === 1 ? "auto" : "none" }}
-              onHoverStart={() => idx === 1 && setIsHovering(true)}
-              onHoverEnd={() => idx === 1 && setIsHovering(false)}
               drag={idx === 1 ? "x" : false}
               dragConstraints={{ left: 0, right: 0 }}
               dragElastic={0.8}
@@ -135,17 +135,12 @@ export default function ProductSlider() {
                   priority={idx === 1}
                 />
                 {/* Drag Overlay */}
-                {idx === 1 && isHovering && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/30 text-white font-medium text-xl  pointer-events-none">
-                    drag
-                  </div>
-                )}
               </div>
             </motion.div>
           );
         })}
       </div>
-      <div className="mt-10">
+      <div className="w-full flex justify-center items-center flex-col gap-2">
         <h4 className="text-lg font-semibold">{slides[activeIndex].client}</h4>
         <p className="text-gray-500">{slides[activeIndex].location}</p>
       </div>
