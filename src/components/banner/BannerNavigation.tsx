@@ -21,31 +21,31 @@ export const BannerNavigation = ({
 }: BannerNavigationProps) => (
   <div className="absolute left-[24px] md:left-[135px] bottom-[5%] -translate-y-1/2 flex flex-col gap-4 z-10">
     <div className="relative">
-      <div className="p-4 relative">
-        <div 
-          className="absolute inset-0"
+      <div className="p-4 h-[115px] w-[115px] md:h-[138px] md:w-[138px] relative  flex items-center justify-center">
+        <div
+          className="absolute inset-0 "
           style={{
             background: `conic-gradient(
               from -43deg,
               white ${progress * 3.6}deg,
               rgba(255, 255, 255, 0.5) ${progress * 3.6}deg
             )`,
-            mask: 'linear-gradient(#eee 0 0) content-box, linear-gradient(#eee 0 0)',
-            maskComposite: 'exclude',
-            padding: '1px',
+            mask: "linear-gradient(#eee 0 0) content-box, linear-gradient(#eee 0 0)",
+            maskComposite: "exclude",
+            padding: "4px",
           }}
         />
         <button
           onClick={onNext}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
-          className="w-20 h-20 rounded-lg overflow-hidden group relative"
+          className="w-[77px] h-[77px] md:w-[93px] md:h-[93px] rounded-lg overflow-hidden group relative"
         >
           <Image
             src={currentSlide.image}
             alt={currentSlide.title}
-            width={93}
-            height={93}
+            width={100}
+            height={100}
             className="object-cover w-full h-full"
           />
           <AnimatePresence>
